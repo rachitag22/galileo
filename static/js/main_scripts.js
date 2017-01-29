@@ -104,6 +104,21 @@ function completeRequest() {
         var afternoon = document.getElementById("afternoon").checked;
         var day = document.getElementById("day").checked;
         var day_selected = $("#day_selected").val();
+        if(day_selected == "Monday"){
+            day_selected = "M"
+        }
+         if(day_selected == "Tuesday"){
+            day_selected = "Tu"
+        }
+         if(day_selected == "Wednesday"){
+            day_selected = "W"
+        }
+         if(day_selected == "Thursday"){
+            day_selected = "Th"
+        }
+         if(day_selected == "Friday"){
+            day_selected = "F"
+        }
         console.log(classes+ building + walking + morning+afternoon + day + day_selected);
         $.ajax({
             url: '/compute-result',
@@ -116,6 +131,8 @@ function completeRequest() {
                 console.log(error);
             }
         });
+        
+        
     }
 }
 

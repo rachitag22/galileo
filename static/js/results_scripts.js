@@ -3,8 +3,7 @@ var jsonURL = "https://daemon-dash-galileo-rachitag22.c9users.io/return-result";
 $.ajax({
     url: jsonURL,
     dataType:'json',
-    type: 'post',
-    data: yourForm.serialize(),
+    type: 'get',
     success:function(response){
                 
         var dp = new DayPilot.Calendar("dp");
