@@ -1,27 +1,32 @@
-scheduler.config.xml_date = "%Y-%m-%d %H:%i";
+var dp = new DayPilot.Calendar("dp");
+
+// behavior and appearance
+dp.cssClassPrefix = "calendar_white";
+
+// view
+var jsonUrl = "https://daemon-dash-galileo-rachitag22.c9users.io/";
 
 
-	scheduler.config.first_hour = 8;
-	scheduler.config.limit_time_select = true;
+dp.startDate = "2016-08-29";
+dp.days = 5;
 
+dp.headerDateFormat = "dddd"; // day of week, long format (e.g. "Monday")
 
-	scheduler.init('scheduler_here',new Date(2014,5,30),"week");
-	scheduler.parse([
-		{ start_date: "2014-06-30 09:00", end_date: "2014-06-30 12:00", text:"Task A-12458", section_id:1},
-		{ start_date: "2014-06-30 10:00", end_date: "2014-06-30 16:00", text:"Task A-89411", section_id:1},
-		{ start_date: "2014-06-30 10:00", end_date: "2014-06-30 14:00", text:"Task A-64168", section_id:1},
-		{ start_date: "2014-06-30 16:00", end_date: "2014-06-30 17:00", text:"Task A-46598", section_id:1},
+dp.events.list = [{
+    "id": "5",
+    "text": "Calendar Event 5",
+    "start": "2014-02-25T10:30:00",
+    "end": "2014-02-25T16:30:00"
+}, {
+    "id": "6",
+    "text": "Calendar Event 6",
+    "start": "2014-02-24T09:00:00",
+    "end": "2014-02-24T14:30:00"
+}, {
+    "id": "7",
+    "text": "Calendar Event 7",
+    "start": "2014-02-27T12:00:00",
+    "end": "2014-02-27T16:00:00"
+}];
 
-		{ start_date: "2014-06-30 12:00", end_date: "2014-06-30 20:00", text:"Task B-48865", section_id:2},
-		{ start_date: "2014-06-30 14:00", end_date: "2014-06-30 16:00", text:"Task B-44864", section_id:2},
-		{ start_date: "2014-06-30 16:30", end_date: "2014-06-30 18:00", text:"Task B-46558", section_id:2},
-		{ start_date: "2014-06-30 18:30", end_date: "2014-06-30 20:00", text:"Task B-45564", section_id:2},
-
-		{ start_date: "2014-06-30 08:00", end_date: "2014-06-30 12:00", text:"Task C-32421", section_id:3},
-		{ start_date: "2014-06-30 14:30", end_date: "2014-06-30 16:45", text:"Task C-14244", section_id:3},
-
-		{ start_date: "2014-06-30 09:20", end_date: "2014-06-30 12:20", text:"Task D-52688", section_id:4},
-		{ start_date: "2014-06-30 11:40", end_date: "2014-06-30 16:30", text:"Task D-46588", section_id:4},
-		{ start_date: "2014-06-30 12:00", end_date: "2014-06-30 18:00", text:"Task D-12458", section_id:4}
-	],"json");
-
+dp.init();

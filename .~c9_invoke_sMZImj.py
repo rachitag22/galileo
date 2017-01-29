@@ -26,15 +26,79 @@ def test():
 def compute():
     jsdata = str(request.form)
     print jsdata
-    print jsdata[0]['classes']
     return jsdata
-
-@app.route('/return-result', methods=['POST'])
-def return_result():
-    return finalArrayData
-
+    
 app.run(host=os.getenv('IP', '0.0.0.0'),port=int(os.getenv('PORT', 8080)))
 
 if __name__ == '__main__':
     app.run()
     app.debug = True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
