@@ -97,6 +97,7 @@ function completeRequest() {
             console.log(classes)
         });
         console.log("Classes:" + classes);
+        var myClasses = JSON.stringify(classes);
         var building = $("#building-selection").val();
         var walking = document.getElementById("walking").checked;
         var morning = document.getElementById("morning").checked;
@@ -106,7 +107,7 @@ function completeRequest() {
         console.log(classes+ building + walking + morning+afternoon + day + day_selected);
         $.ajax({
             url: '/compute-result',
-            data: {"classes": classes, "building": building, "morning": morning, "afternoon": afternoon, "day": day, "day-selected": day_selected}, 
+            data: {"classes": myClasses, "building": building, "morning": morning, "afternoon": afternoon, "day": day, "day-selected": day_selected, "walking":walking}, 
             type: 'POST',
             success: function(response) {
                 console.log(response);
