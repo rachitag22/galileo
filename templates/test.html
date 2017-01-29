@@ -1,5 +1,16 @@
-var jsonURL = "https://daemon-dash-galileo-rachitag22.c9users.io/return-result";
+<!DOCTYPE html>
+<html>
+    
 
+<head>
+    
+
+<script src="{{ url_for('static', filename='js/daypilot-all.min.js') }}"></script>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/calendar_white.css') }}" />
+
+<div id="dp"></div>
+
+<script type="text/javascript">
     var dp = new DayPilot.Calendar("dp");
 
     // behavior and appearance
@@ -8,8 +19,6 @@ var jsonURL = "https://daemon-dash-galileo-rachitag22.c9users.io/return-result";
     // view
     dp.startDate = "2014-02-25";
     dp.days = 5;
-    
-    dp.headerDateFormat = "dddd"; // day of week, long format (e.g. "Monday")
 
     // dp.events.list = [{
     //     start: "2016-03-25T00:00:00",
@@ -150,3 +159,8 @@ var jsonURL = "https://daemon-dash-galileo-rachitag22.c9users.io/return-result";
 }]
 
     dp.init();
+</script>
+
+</head>
+
+</html>

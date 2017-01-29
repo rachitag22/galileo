@@ -131,8 +131,6 @@ function completeRequest() {
                 console.log(error);
             }
         });
-        
-        
     }
 }
 
