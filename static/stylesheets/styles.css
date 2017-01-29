@@ -12,12 +12,42 @@ body {
 }
 
 .main-panel {
-    width: 30%;
-    margin: 50px auto auto auto;
+    width: 50%;
+    margin: 50px auto 25px auto;
+    border-color: #2c3e50 !important;
+}
+
+.results-panel {
+    width: 65%;
+    margin: 50px auto 25px auto;
     border-color: #2c3e50 !important;
 }
 
 .main-panel-heading {
     background-color: #2c3e50 !important;
     text-align: center;
+}
+
+.input-section {
+    margin: 15px 0 15px 0;
+}
+
+.input-section-header {
+    font-size: normal;
+    color: #2c3e50;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.search-autocomplete {
+    border-radius: 5px;
+    margin: 5px 0 5px 0;
+}
+
+.btn {
+     margin: 10px auto 10px auto;
+}
+
+.inline-div {
+    display: inline-block;
 }
