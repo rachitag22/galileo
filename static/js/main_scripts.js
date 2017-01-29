@@ -92,7 +92,9 @@ function completeRequest() {
         var classes = [];
         $('#class-search-group').find("input").each(function () {
             var inputValue = this.value;
+            console.log(inputValue)
             classes.push(inputValue);
+            console.log(classes)
         });
         console.log("Classes:" + classes);
         var building = $("#building-selection").val();

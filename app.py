@@ -26,7 +26,6 @@ def test():
 def compute():
     jsdata = str(request.form)
     print jsdata
-    print jsdata[0]['classes']
     return jsdata
 
 @app.route('/return-result', methods=['POST'])
