@@ -1,39 +1,73 @@
 <html>
 
-	<title>Galileo</title>
+<title>Galileo</title>
 
-	<head>
-		<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link href="{{ url_for('static', filename='stylesheets/styles.css') }}" rel="stylesheet" type="text/css" />
-		<link rel='stylesheet' href="{{ url_for('static', filename='stylesheets/dhtmlxscheduler.css' }}" />
-		<link href="https://fonts.googleapis.com/css?family=Overpass:400,400i,700,700i" rel="stylesheet">
-		
-  		<script></script>
-  </script>
-	</head>
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-	<body>
-		<script src="{{ url_for('static', filename='js/results_scripts.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/dhtmlxscheduler.js') }}"></script>
-		
-	    <div class="container">
-	    	<img class="center-block logo" src="{{ url_for('static', filename='img/logo2.png') }}" />
-	    	
-	    	<div class="panel panel-primary results-panel">
-				<div class="panel-heading main-panel-heading">
-					<h3 class="panel-title center-block">Your results are here!</h3>
-				</div>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='stylesheets/styles.css') }}" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Overpass:400,400i,700,700i" rel="stylesheet">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{{ url_for('static', filename='DayPilotProJavaScriptTrial-8.3.2661/scripts/daypilot-all.min.js') }}" type="text/javascript"></script>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='DayPilotProJavaScriptTrial-8.3.2661/demo/themes/calendar_white.css') }}" />
+
+</head>
+
+<body>
+  <div class="container">
+  	<img class="center-block logo" src="{{ url_for('static', filename='img/logo2.png') }}" />
+  	
+  	<div class="panel panel-primary results-panel">
+    	<div class="panel-heading main-panel-heading">
+    		<h3 class="panel-title center-block">Your results are ready.</h3>
+    	</div>
 				
-				<div class="panel-body main-panel-body">
-					
-				
-				</div>
-			</div>
-	    </div>
-	    
-	</body>
+  		<div class="panel-body main-panel-body">
+        <div id="dp"></div>
+        <div id="dp1"></div>
+    
+        <script type="text/javascript">
+            var dp = new DayPilot.Calendar("dp");
+    
+            // behavior and appearance
+            dp.cssClassPrefix = "calendar_white";
+    
+            // view
+            dp.startDate = "2014-02-24";
+            dp.days = 5;
+    
+            dp.headerDateFormat = "dddd"; // day of week, long format (e.g. "Monday")
+            
+            
+            
+            dp.events.list = [{
+                "id": "5",
+                "text": "Calendar Event 5",
+                "start": "2014-02-25T10:30:00",
+                "end": "2014-02-25T16:30:00"
+            }, {
+                "id": "6",
+                "text": "Calendar Event 6",
+                "start": "2014-02-24T09:00:00",
+                "end": "2014-02-24T14:30:00"
+            }, {
+                "id": "7",
+                "text": "Calendar Event 7",
+                "start": "2014-02-27T12:00:00",
+                "end": "2014-02-27T16:00:00"
+            }];
+    
+            dp.init();
+            
+            
+        </script>
+      </div>
+    </div>
+  </div>
+    
+    
+</body>
 
 </html>
